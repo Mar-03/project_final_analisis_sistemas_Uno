@@ -20,6 +20,10 @@ class LabDashboardController extends Controller
             'ordenes_pendientes' => (clone $query)->where('estado', 'pendiente')->count(),
             'ordenes_completadas' => (clone $query)->where('estado', 'completado')->count(),
             'resultados_entregados' => (clone $query)->where('estado', 'entregado')->count(),
+            'ultimas_ordenes' => (clone $query)
+                ->latest()
+                ->limit(10)
+                ->get(['id', 'paciente_nombre', 'estado', 'created_at']),
         ]);
     }
 }
