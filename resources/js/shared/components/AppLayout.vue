@@ -8,6 +8,9 @@
                 <router-link class="layout__link" to="/">
                     Inicio
                 </router-link>
+                <router-link class="layout__link" to="/lab/dashboard">
+                    Lab. Dashboard
+                </router-link>
                 <router-link class="layout__link" to="/login">
                     Acceso
                 </router-link>
